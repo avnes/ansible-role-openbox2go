@@ -1,0 +1,32 @@
+galaxy_info:
+  author: avnes
+  description: Install openbox and make it ready to use
+  company:
+
+  license: license (MIT)
+
+  min_ansible_version: 2.0
+
+  platforms:
+  - name: Fedora
+    versions:
+    - 24
+    - 25
+  - name: ArchLinux
+    versions:
+    - all
+    - any
+  - name: Ubuntu
+    versions:
+    - xenial
+    - yakkety
+  - name: Debian
+    versions:
+    - stretch
+    - sid
+
+  galaxy_tags:
+  - wm
+  - gui
+
+dependencies: []
