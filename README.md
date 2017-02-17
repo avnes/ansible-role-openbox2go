@@ -1,3 +1,6 @@
+master: [![Build Status](https://travis-ci.org/avnes/ansible-role-openbox2go.png?branch=master)](https://travis-ci.org/avnes/ansible-role-openbox2go) develop: [![Build Status](https://travis-ci.org/avnes/ansible-role-openbox2go.png?branch=develop)](https://travis-ci.org/avnes/ansible-role-openbox2go)
+
+
 # ansible-role-openbox2go
 
 Install openbox and make it ready to use with Plank, Tint2 and Conky.
@@ -29,17 +32,19 @@ config_owner_primary_group:
 
 ## Dependencies
 
+### Installation
 ```
 ansible-galaxy install -r requirements.yml
 ```
 
+### Usage
 ```
 vars:
   config_owner: "{{ ansible_user_id }}"
   config_owner_primary_group: "{{ config_owner }}"
 roles:
   - { role: avnes.ansible-role-conky }
-  - { role: avnes.ansible-role-plank }
+  - { role: avnes.ansible-role-openbox2go }
   - { role: avnes.ansible-role-tint2 }
 ```
 
