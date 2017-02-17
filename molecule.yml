@@ -1,0 +1,21 @@
+---
+molecule:
+  ansible_config_template: tests/ansible.cfg.j2
+ansible:
+  playbook: tests/test.yml
+  config_file: ansible.cfg
+dependency:
+  name: galaxy
+driver:
+  name: docker
+docker:
+  containers:
+    - name: ansible-role-plank-fedora-25
+      image: fedora
+      image_version: '25'
+      command: /bin/bash
+      dockerfile: tests/DockerFile-Fedora-25
+      ansible_groups:
+        - group3
+verifier:
+  name: testinfra

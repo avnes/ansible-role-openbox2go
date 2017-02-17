@@ -29,4 +29,7 @@ galaxy_info:
   - wm
   - gui
 
-dependencies: []
+dependencies:
+  - avnes.ansible-role-conky
+  - avnes.ansible-role-plank
+  - avnes.ansible-role-tint2

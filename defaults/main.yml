@@ -1,2 +1,6 @@
 ---
 # defaults file for ansible-role-openbox2go
+
+config_owner: "{{ ansible_user_id }}"
+
+config_owner_primary_group: "{{ config_owner }}"

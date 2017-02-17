@@ -1,5 +1,6 @@
 ---
-- hosts: localhost
-  remote_user: root
+- hosts: all
+  vars:
+    owner: 'ansible-test-user'
   roles:
-    - ansible-role-openbox2go
+    - { role: ansible-role-openbox2go, config_owner: "{{ owner }}" }
