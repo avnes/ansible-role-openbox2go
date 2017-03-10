@@ -1,6 +1,47 @@
 ---
-# defaults file for ansible-role-openbox2go
-
 config_owner: "{{ ansible_user_id }}"
-
 config_owner_primary_group: "{{ config_owner }}"
+
+bg_autostart: True
+bg_picture: "{{ config_dir }}/berlin.jpg"
+bg_command: "feh --bg-fill {{ bg_picture }}"
+
+conky_autostart: True
+
+nm_applet_autostart: True
+
+plank_autostart: True
+
+scim_autostart: True
+
+screensaver_autostart: True
+screensaver_command: 'xautolock -time 10 -locker slock'
+
+terminal_autostart: True
+terminal_command: lxterminal
+
+tint2_autostart: True
+
+software_list:
+  - { name: 'feh', state: 'present' }
+  - { name: 'network-manager-applet', state: 'present' }
+  - { name: 'scim', state: 'present' }
+  - { name: 'lxterminal', state: 'present' }
+  - { name: 'xautolock', state: 'present' }
+
+software_xtra_debian_family:
+  - { name: 'network-manager', state: 'present' }
+
+software_xtra_redhat_family:
+  - { name: 'network-manager-applet', state: 'present' }
+
+software_xtra_arch_family:
+  - { name: 'network-manager-applet', state: 'present' }
+
+arch_software_list: "{{ software_list }} + {{ software_xtra_arch_family }}"
+
+debian_software_list: "{{ software_list }} + {{ software_xtra_debian_family }}"
+
+fedora_software_list: "{{ software_list }} + {{ software_xtra_redhat_family }}"
+
+ubuntu_software_list: "{{ software_list }} + {{ software_xtra_debian_family }}"

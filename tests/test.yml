@@ -1,6 +1,6 @@
 ---
 - hosts: all
   vars:
-    owner: 'ansible-test-user'
+    config_owner: ansible-test-user
   roles:
-    - { role: ansible-role-openbox2go, config_owner: "{{ owner }}" }
+    - { role: ansible-role-openbox2go }

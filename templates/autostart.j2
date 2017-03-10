@@ -1,0 +1,33 @@
+# Programs that will run after Openbox has started
+
+{% if "{{ bg_autostart }}" %}
+{{ bg_command }} &
+{% endif %}
+
+{% if "{{ conky_autostart }}" %}
+conky &
+{% endif %}
+
+{% if "{{ nm_applet_autostart }}" %}
+nm-applet &
+{% endif %}
+
+{% if "{{ plank_autostart }}" %}
+plank &
+{% endif %}
+
+{% if "{{ scim_autostart }}" %}
+scim -d &
+{% endif %}
+
+{% if "{{ terminal_autostart }}" %}
+{{ terminal_command }} &
+{% endif %}
+
+{% if "{{ screensaver_autostart }}" %}
+{{ screensaver_command }} &
+{% endif %}
+
+{% if "{{ tint2_autostart }}" %}
+tint2 &
+{% endif %}

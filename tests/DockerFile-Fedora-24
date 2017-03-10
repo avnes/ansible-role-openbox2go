@@ -1,4 +1,4 @@
 FROM fedora:24
 
-RUN dnf install -y python2 python2-dnf libselinux-python ansible \
+RUN dnf install -y python2 python2-dnf libselinux-python ansible sudo which \
   && useradd ansible-test-user

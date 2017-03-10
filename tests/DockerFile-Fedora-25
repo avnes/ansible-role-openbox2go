@@ -1,6 +1,6 @@
 FROM fedora:25
 
-RUN dnf install -y python2 python2-dnf libselinux-python ansible \
+RUN dnf install -y python2 python2-dnf libselinux-python ansible sudo which \
   && useradd ansible-test-user \
   && ansible-galaxy install avnes.ansible-role-conky \
   && ansible-galaxy install avnes.ansible-role-plank \

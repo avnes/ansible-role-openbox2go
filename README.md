@@ -20,14 +20,99 @@ pip install testinfra
 
 ## Role Variables
 
+### defaults/main.yml
 ```
 config_owner:
-  String (mandatory) to specify the Linux user that should have conky setup for them.
+  Type: String
   Default: "{{ ansible_user_id }}"
 
 config_owner_primary_group:
-  String (optional) to specify the primary group of the Linux user to own the openbox configuration.
+  Type: String
   Default: "{{ config_owner }}"
+
+bg_autostart:
+  Type: Boolean
+  Default: True
+
+bg_picture:
+  Type: String
+  Default: "{{ config_dir }}/berlin.jpg"
+
+bg_command:
+  Type: String
+  Default: feh --bg-fill "{{ bg_picture }}"
+
+conky_autostart:
+  Type: Boolean
+  Default: True
+
+nm_applet_autostart:
+  Type: Boolean
+  Default: True
+
+plank_autostart:
+  Type: Boolean
+  Default: True
+
+scim_autostart:
+  Type: Boolean
+  Default: True
+
+screensaver_autostart:
+  Type: Boolean
+  Default: True
+
+screensaver_command:
+  Type: String
+  Default: 'xautolock -time 10 -locker slock'
+
+terminal_autostart:
+  Type: Boolean
+  Default: True
+
+terminal_command:
+  Type: String
+  Default: lxterminal
+
+tint2_autostart:
+  Type: Boolean
+  Default: True
+
+software_list:
+  Type: List
+  Default:
+    - { name: 'feh', state: 'present' }
+    - { name: 'network-manager-applet', state: 'present' }
+    - { name: 'scim', state: 'present' }
+    - { name: 'lxterminal', state: 'present' }
+    - { name: 'xautolock', state: 'present' }
+
+arch_software_list:
+  Type: List
+  Default: "{{ software_list }}"
+
+debian_software_list:
+  Type: List
+  Default: "{{ software_list }}"
+
+fedora_software_list:
+  Type: List
+  Default: "{{ software_list }}"
+
+ubuntu_software_list:
+  Type: List
+  Default: "{{ software_list }}"
+```
+
+### vars/main.yml
+```
+config_dir:
+  Type: String
+  Default: "~{{ config_owner }}/.config/openbox"
+
+autostart_file:
+  Type: String
+  Default: "{{ config_dir }}/autostart"
 ```
 
 ## Dependencies
@@ -35,17 +120,6 @@ config_owner_primary_group:
 ### Installation
 ```
 ansible-galaxy install -r requirements.yml
-```
-
-### Usage
-```
-vars:
-  config_owner: "{{ ansible_user_id }}"
-  config_owner_primary_group: "{{ config_owner }}"
-roles:
-  - { role: avnes.ansible-role-conky }
-  - { role: avnes.ansible-role-openbox2go }
-  - { role: avnes.ansible-role-tint2 }
 ```
 
 ## Example Playbook

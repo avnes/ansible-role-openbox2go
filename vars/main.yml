@@ -1,2 +1,5 @@
 ---
-# vars file for ansible-role-openbox2go
+
+config_dir: "~{{ config_owner }}/.config/openbox"
+
+autostart_file: "{{ config_dir }}/autostart"
