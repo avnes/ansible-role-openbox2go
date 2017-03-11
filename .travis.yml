@@ -30,9 +30,7 @@ install:
   - ansible-galaxy install -r requirements.yml -p tests/roles
 
 script:
-  # Basic role syntax check
   - ansible-playbook tests/test.yml -i tests/inventory --syntax-check
-  - ansible-playbook tests/test.yml -i tests/inventory --connection=local --sudo -vvvv
 
 #notifications:
 #  webhooks: https://galaxy.ansible.com/api/v1/notifications/
