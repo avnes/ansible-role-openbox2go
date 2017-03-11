@@ -31,6 +31,9 @@ software_list:
 software_xtra_debian_family:
   - { name: 'network-manager', state: 'present' }
 
+software_xtra_ubuntu_family:
+  - { name: 'network-manager', state: 'present' }
+
 software_xtra_redhat_family:
   - { name: 'network-manager-applet', state: 'present' }
 
@@ -43,4 +46,4 @@ debian_software_list: "{{ software_list }} + {{ software_xtra_debian_family }}"
 
 fedora_software_list: "{{ software_list }} + {{ software_xtra_redhat_family }}"
 
-ubuntu_software_list: "{{ software_list }} + {{ software_xtra_debian_family }}"
+ubuntu_software_list: "{{ software_list }} + {{ software_xtra_ubuntu_family }}"

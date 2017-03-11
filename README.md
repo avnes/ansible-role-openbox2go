@@ -11,8 +11,6 @@ Requires Xorg to be installed for making openbox usable.
 
 In order to continuously develop and test this role, you will need docker, pip, molecule, testinfra and python-docker-py installed.
 
-Install docker, pip and python-docker-py with your distributions package manager. Then install molecule and tesinfra with pip:
-
 ```
 pip install molecule
 pip install testinfra
@@ -82,26 +80,45 @@ software_list:
   Type: List
   Default:
     - { name: 'feh', state: 'present' }
-    - { name: 'network-manager-applet', state: 'present' }
     - { name: 'scim', state: 'present' }
     - { name: 'lxterminal', state: 'present' }
     - { name: 'xautolock', state: 'present' }
 
+software_xtra_debian_family:
+  Type: List
+  Default:
+    - { name: 'network-manager', state: 'present' }
+
+software_xtra_ubuntu_family:
+  Type: List
+  Default:
+    - { name: 'network-manager', state: 'present' }
+
+software_xtra_redhat_family:
+  Type: List
+  Default:
+    - { name: 'network-manager-applet', state: 'present' }
+
+software_xtra_arch_family:
+  Type: List
+  Default:
+    - { name: 'network-manager-applet', state: 'present' }
+
 arch_software_list:
   Type: List
-  Default: "{{ software_list }}"
+  Default: "{{ software_list }} + {{ software_xtra_arch_family }}"
 
 debian_software_list:
   Type: List
-  Default: "{{ software_list }}"
+  Default: "{{ software_list }} + {{ software_xtra_debian_family }}"
 
 fedora_software_list:
   Type: List
-  Default: "{{ software_list }}"
+  Default: "{{ software_list }} + {{ software_xtra_redhat_family }}"
 
 ubuntu_software_list:
   Type: List
-  Default: "{{ software_list }}"
+  Default: "{{ software_list }} + {{ software_xtra_ubuntu_family }}"
 ```
 
 ### vars/main.yml
