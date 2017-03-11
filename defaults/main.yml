@@ -24,7 +24,6 @@ tint2_autostart: True
 
 software_list:
   - { name: 'feh', state: 'present' }
-  - { name: 'network-manager-applet', state: 'present' }
   - { name: 'scim', state: 'present' }
   - { name: 'lxterminal', state: 'present' }
   - { name: 'xautolock', state: 'present' }
