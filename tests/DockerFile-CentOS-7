@@ -1,0 +1,7 @@
+FROM centos:7
+
+RUN yum install -y python2 python2-yum libselinux-python wget sudo which tar gzip \
+&& wget http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-9.noarch.rpm \
+&& yum install -y epel-release-7-9.noarch.rpm \
+&& yum install -y ansible \
+&& useradd ansible-test-user
