@@ -2,6 +2,9 @@
 config_owner: "{{ ansible_user_id }}"
 config_owner_primary_group: "{{ config_owner }}"
 
+xkb_options: True
+xkb_command: 'setxkbmap -layout "dk"'
+
 bg_autostart: True
 bg_picture: "{{ config_dir }}/berlin.jpg"
 bg_command: "feh --bg-fill {{ bg_picture }}"

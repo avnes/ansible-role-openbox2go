@@ -23,58 +23,82 @@ pip install testinfra
 config_owner:
   Type: String
   Default: "{{ ansible_user_id }}"
+  Description: The name of the Linux user owning the Openbox configuration.
 
 config_owner_primary_group:
   Type: String
   Default: "{{ config_owner }}"
+  Description: The primary group of the Linux user owning the Openbox configuration.
+
+xkb_options:
+  Type: Boolean
+  Default: True
+  Description: Used to set keyboard configuration in Xorg. See https://wiki.archlinux.org/index.php/Keyboard_configuration_in_Xorg for more info.
+
+xkb_command:
+  Type: String
+  Default: 'setxkbmap -layout "dk"'
+  Description: The command to set keyboard configuration in Xorg.
 
 bg_autostart:
   Type: Boolean
   Default: True
+  Description: Set a background image at login.
 
 bg_picture:
   Type: String
   Default: "{{ config_dir }}/berlin.jpg"
+  Description: The location of the background image.
 
 bg_command:
   Type: String
   Default: feh --bg-fill "{{ bg_picture }}"
+  Description: The command to set a background image.
 
 conky_autostart:
   Type: Boolean
   Default: True
+  Description: Launch conky at login.
 
 nm_applet_autostart:
   Type: Boolean
   Default: True
+  Description: Launch network-manager at login.
 
 plank_autostart:
   Type: Boolean
   Default: True
+  Description: Launch plank dock at login.
 
 scim_autostart:
   Type: Boolean
   Default: True
+  Description: Launch scim to add support for non-English languages.
 
 screensaver_autostart:
   Type: Boolean
   Default: True
+  Description: Launch dormant screen saver at login.
 
 screensaver_command:
   Type: String
   Default: 'xautolock -time 10 -locker slock'
+  Description: The command to run the screen saver.
 
 terminal_autostart:
   Type: Boolean
   Default: True
+  Description: Launch a terminal at login.
 
 terminal_command:
   Type: String
   Default: lxterminal
+  Description: The command to launch a terminal at login.
 
 tint2_autostart:
   Type: Boolean
   Default: True
+  Description: Launch tint2 dock at login.
 
 software_list:
   Type: List

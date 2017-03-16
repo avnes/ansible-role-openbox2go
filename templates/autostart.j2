@@ -31,3 +31,7 @@ scim -d &
 {% if "{{ tint2_autostart }}" %}
 tint2 &
 {% endif %}
+
+{% if "{{ xkb_options }}" %}
+{{ xkb_command }} &
+{% endif %}
