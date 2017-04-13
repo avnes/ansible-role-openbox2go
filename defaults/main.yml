@@ -7,7 +7,7 @@ xkb_command: 'setxkbmap -layout "dk"'
 
 bg_autostart: True
 bg_picture: "{{ config_dir }}/berlin.jpg"
-bg_command: "feh --bg-fill {{ bg_picture }}"
+bg_command: "feh --bg-fill {{ bg_picture }} --stretch"
 
 conky_autostart: True
 
