@@ -30,6 +30,9 @@ software_list:
   - { name: 'scim', state: 'present' }
   - { name: 'lxterminal', state: 'present' }
   - { name: 'xautolock', state: 'present' }
+  - { name: 'openbox', state: 'present' }
+  - { name: 'obmenu', state: 'present' }
+  - { name: 'obconf', state: 'present' }
 
 software_xtra_debian_family:
   - { name: 'network-manager', state: 'present' }
