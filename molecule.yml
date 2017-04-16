@@ -56,5 +56,12 @@ docker:
       dockerfile: tests/Dockerfile-Ubuntu-yakkety
       ansible_groups:
         - ansible-role-openbox2go-ubuntu-yakkety
+    - name: ansible-role-openbox2go-ubuntu-zesty
+      image: ubuntu
+      image_version: '17.04'
+      command: /bin/bash
+      dockerfile: tests/Dockerfile-Ubuntu-zesty
+      ansible_groups:
+        - ansible-role-openbox2go-ubuntu-zesty
 verifier:
   name: testinfra
