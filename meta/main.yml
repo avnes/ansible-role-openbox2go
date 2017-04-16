@@ -25,6 +25,7 @@ galaxy_info:
     versions:
     - stretch
     - sid
+    - jessie
 
   galaxy_tags:
   - wm

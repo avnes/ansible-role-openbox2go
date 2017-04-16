@@ -28,6 +28,13 @@ docker:
       dockerfile: tests/Dockerfile-Debian-stretch
       ansible_groups:
         - ansible-role-openbox2go-debian-stretch
+    - name: ansible-role-openbox2go-debian-jessie
+      image: debian
+      image_version: 'jessie'
+      command: /bin/bash
+      dockerfile: tests/Dockerfile-Debian-jessie
+      ansible_groups:
+        - ansible-role-openbox2go-debian-jessie
     - name: ansible-role-openbox2go-fedora-24
       image: fedora
       image_version: '24'

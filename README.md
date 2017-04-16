@@ -160,7 +160,7 @@ autostart_file:
 
 ### Installation
 ```
-ansible-galaxy install -r requirements.yml
+ansible-galaxy install -r requirements.yml -p tests/roles -f 
 ```
 
 ## Example Playbook
