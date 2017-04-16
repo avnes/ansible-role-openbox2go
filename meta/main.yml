@@ -26,6 +26,9 @@ galaxy_info:
     - stretch
     - sid
     - jessie
+  - name: opensuse
+    versions:
+    - 42.2
 
   galaxy_tags:
   - wm

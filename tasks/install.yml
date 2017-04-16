@@ -45,3 +45,11 @@
     name: "{{ item.name }}"
     state: "{{ item.state }}"
   with_items: "{{ debian_software_list }}"
+
+- name: Install software on openSUSE
+  when: ansible_os_family == 'Suse'
+  become: true
+  zypper:
+    name: "{{ item.name }}"
+    state: "{{ item.state }}"
+  with_items: "{{ opensuse_software_list }}"

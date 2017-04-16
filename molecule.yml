@@ -1,6 +1,7 @@
 ---
 ansible:
   playbook: tests/test.yml
+  verbose: False
 dependency:
   name: galaxy
 driver:
@@ -70,5 +71,12 @@ docker:
       dockerfile: tests/Dockerfile-Ubuntu-zesty
       ansible_groups:
         - ansible-role-openbox2go-ubuntu-zesty
+    - name: ansible-role-openbox2go-opensuse-42.2
+      image: opensuse
+      image_version: '42.2'
+      command: /bin/bash
+      dockerfile: tests/Dockerfile-openSUSE-42.2
+      ansible_groups:
+        - ansible-role-openbox2go-opensuse-42.2
 verifier:
   name: testinfra

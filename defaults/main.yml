@@ -53,3 +53,11 @@ debian_software_list: "{{ software_list }} + {{ software_xtra_debian_family }}"
 fedora_software_list: "{{ software_list }} + {{ software_xtra_redhat_family }}"
 
 ubuntu_software_list: "{{ software_list }} + {{ software_xtra_ubuntu_family }}"
+
+opensuse_software_list:
+  - { name: 'feh', state: 'present' }
+  - { name: 'lxterminal', state: 'present' }
+  - { name: 'lxterminal-lang', state: 'present' }
+  - { name: 'xautolock', state: 'present' }
+  - { name: 'openbox', state: 'present' }
+  - { name: 'obconf', state: 'present' }
