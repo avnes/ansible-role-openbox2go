@@ -1,6 +1,5 @@
 master: [![Build Status](https://travis-ci.org/avnes/ansible-role-openbox2go.png?branch=master)](https://travis-ci.org/avnes/ansible-role-openbox2go) develop: [![Build Status](https://travis-ci.org/avnes/ansible-role-openbox2go.png?branch=develop)](https://travis-ci.org/avnes/ansible-role-openbox2go)
 
-
 # ansible-role-openbox2go
 
 Install openbox and make it ready to use with Plank, Tint2 and Conky.
@@ -9,17 +8,11 @@ Install openbox and make it ready to use with Plank, Tint2 and Conky.
 
 Requires Xorg to be installed for making openbox usable.
 
-In order to continuously develop and test this role, you will need docker, pip, molecule, testinfra and python-docker-py installed.
-
-```
-pip install molecule
-pip install testinfra
-```
-
 ## Role Variables
 
 ### defaults/main.yml
-```
+
+```yaml
 config_owner:
   Type: String
   Default: "{{ ansible_user_id }}"
@@ -146,7 +139,8 @@ ubuntu_software_list:
 ```
 
 ### vars/main.yml
-```
+
+```yaml
 config_dir:
   Type: String
   Default: "~{{ config_owner }}/.config/openbox"
@@ -159,13 +153,14 @@ autostart_file:
 ## Dependencies
 
 ### Installation
-```
+
+```yaml
 ansible-galaxy install -r requirements.yml -p tests/roles -f
 ```
 
 ## Example Playbook
 
-```
+```yaml
 - hosts: all
   vars:
     config_owner: "emma"
@@ -177,8 +172,9 @@ ansible-galaxy install -r requirements.yml -p tests/roles -f
 ## Test
 
 ```
-ansible-galaxy install -r requirements.yml -p tests/roles
-molecule create
+virtualenv ~/.virtualenv/ansible-role-openbox2go
+source ~/.virtualenv/ansible-role-openbox2go/bin/activate
+pip install -r requirements.txt
 molecule test
 ```
 

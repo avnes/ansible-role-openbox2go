@@ -31,7 +31,6 @@ software_list:
   - { name: 'lxterminal', state: 'present' }
   - { name: 'xautolock', state: 'present' }
   - { name: 'openbox', state: 'present' }
-  - { name: 'obmenu', state: 'present' }
   - { name: 'obconf', state: 'present' }
 
 software_xtra_debian_family:

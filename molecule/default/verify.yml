@@ -1,0 +1,24 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+  - name: Stat autostart
+    ansible.builtin.stat:
+      path: /home/ansible-test-user/.config/openbox/autostart
+    register: stat_openbox2go
+  - name: Assert that autostart exists
+    assert:
+      that: stat_openbox2go.stat.exists
+  - name: Assert that autostart is a regular file
+    assert:
+      that: stat_openbox2go.stat.isreg
+  - name: Assert that autostart is owned by user ansible-test-user
+    assert:
+      that: stat_openbox2go.stat.pw_name == 'ansible-test-user'
+  - name: Assert that autostart is owned by group ansible-test-user
+    assert:
+      that: stat_openbox2go.stat.gr_name == 'ansible-test-user'
+  - name: Assert that autostart has mode 0700
+    assert:
+      that: stat_openbox2go.stat.mode == '0700'

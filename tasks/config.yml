@@ -17,7 +17,7 @@
   command: cp "{{ autostart_file }}" "{{ autostart_file }}.{{ ansible_date_time.epoch }}"
   become: True
   become_user: "{{ config_owner }}"
-  when: stat_result.stat.exists is defined and stat_result.stat.exists == True
+  when: stat_result.stat.exists is defined and stat_result.stat.exists
   changed_when: false
 
 - name: Use autostart file from template

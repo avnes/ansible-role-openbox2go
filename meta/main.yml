@@ -1,40 +1,57 @@
 galaxy_info:
+  role_name: openbox2go
   author: avnes
   description: Install openbox and make it ready to use
   company:
 
   license: license (MIT)
 
-  min_ansible_version: 2.0
+  min_ansible_version: 2.9
 
   platforms:
   - name: Fedora
     versions:
     - 24
     - 25
-  - name: ArchLinux
-    versions:
-    - all
-    - any
+    - 26
+    - 27
+    - 28
+    - 29
+    - 30
+    - 31
+    - 32
+    - 33
+    - 34
   - name: Ubuntu
     versions:
     - xenial
     - yakkety
     - zesty
+    - artful
+    - bionic
+    - cosmic
+    - disco
+    - eoan
+    - focal
+    - groovy
+    - hirsute
+    - impish
+  - name: ArchLinux
+    versions:
+    - all
+    - any
   - name: Debian
     versions:
-    - stretch
     - sid
-    - jessie
   - name: opensuse
     versions:
-    - 42.2
+    - 15.2
 
   galaxy_tags:
   - wm
   - gui
 
 dependencies:
-  - avnes.ansible-role-conky
-  - avnes.ansible-role-plank
-  - avnes.ansible-role-tint2
+  - avnes.conky
+  - avnes.plank
+  - avnes.tint2
