@@ -1,6 +1,0 @@
----
-- hosts: all
-  vars:
-    config_owner: ansible-test-user
-  roles:
-    - { role: ansible-role-openbox2go }

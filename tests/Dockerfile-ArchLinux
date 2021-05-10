@@ -1,9 +1,0 @@
-FROM pritunl/archlinux:latest
-
-RUN pacman --needed --noconfirm -S python2 python2-yaml python2-paramiko \
-  python2-jinja python2-crypto python2-passlib python2-netaddr ansible \
-  sudo which tar gzip \
-  && useradd ansible-test-user \
-  && mkdir /home/ansible-test-user \
-  && chown ansible-test-user:ansible-test-user /home/ansible-test-user \
-  && ln -s /usr/bin/python2 /usr/bin/python

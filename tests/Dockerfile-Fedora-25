@@ -1,7 +1,0 @@
-FROM fedora:25
-
-RUN dnf install -y python2 python2-dnf libselinux-python ansible sudo which tar gzip \
-  && useradd ansible-test-user \
-  && ansible-galaxy install avnes.ansible-role-conky \
-  && ansible-galaxy install avnes.ansible-role-plank \
-  && ansible-galaxy install avnes.ansible-role-tint2
