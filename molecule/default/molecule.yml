@@ -1,11 +1,15 @@
 ---
 dependency:
   name: galaxy
+  options:
+    ignore-certs: True
+    ignore-errors: True
+    role-file: requirements.yml
 driver:
   name: docker
 platforms:
   - name: ansible-role-openbox2go-fedora
-    image: ghcr.io/avnes/molecule-fedora:34
+    image: ghcr.io/avnes/molecule-fedora:35
     pre_build_image: True
   - name: ansible-role-openbox2go-ubuntu
     image: ghcr.io/avnes/molecule-ubuntu:latest
