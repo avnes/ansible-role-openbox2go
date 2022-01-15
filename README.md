@@ -1,12 +1,13 @@
-master: [![Build Status](https://travis-ci.org/avnes/ansible-role-openbox2go.png?branch=master)](https://travis-ci.org/avnes/ansible-role-openbox2go) develop: [![Build Status](https://travis-ci.org/avnes/ansible-role-openbox2go.png?branch=develop)](https://travis-ci.org/avnes/ansible-role-openbox2go)
-
 # ansible-role-openbox2go
+
+![Ansible](https://github.com/avnes/ansible-role-openbox2go/actions/workflows/ansible.yaml/badge.svg)
 
 Install openbox and make it ready to use with Plank, Tint2 and Conky.
 
 ## Requirements
 
-Requires Xorg to be installed for making openbox usable.
+- Poetry. Install it from <https://python-poetry.org/docs/>
+- Requires Xorg to be installed for making openbox usable.
 
 ## Role Variables
 
@@ -169,12 +170,17 @@ ansible-galaxy install -r requirements.yml -p tests/roles -f
      - { role: ansible-role-openbox2go }
 ```
 
+## For pip compability
+
+```bash
+poetry export --dev --output requirements.txt
+```
+
 ## Test
 
-```
-virtualenv ~/.virtualenv/ansible-role-openbox2go
-source ~/.virtualenv/ansible-role-openbox2go/bin/activate
-pip install -r requirements.txt
+```bash
+poetry install
+poetry shell
 molecule test
 ```
 
@@ -184,4 +190,4 @@ MIT
 
 ## Author Information
 
-<https://github.com/avnes>
+<https://github.com/avnes/>
