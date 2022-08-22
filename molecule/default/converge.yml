@@ -5,5 +5,5 @@
     config_owner: ansible-test-user
   tasks:
     - name: "Include ansible-role-openbox2go"
-      include_role:
+      ansible.builtin.include_role:
         name: "ansible-role-openbox2go"

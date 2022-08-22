@@ -1,7 +1,7 @@
 ---
 
 - name: Make sure config directory exist
-  file:
+  ansible.builtin.file:
     path: "{{ config_dir }}"
     state: directory
     owner: "{{ config_owner }}"
@@ -9,19 +9,19 @@
     mode: 0700
 
 - name: Check if autostart file already exist
-  stat:
+  ansible.builtin.stat:
     path: "{{ autostart_file }}"
   register: stat_result
 
 - name: Backup autostart file if it already exist
-  command: cp "{{ autostart_file }}" "{{ autostart_file }}.{{ ansible_date_time.epoch }}"
+  ansible.builtin.command: cp "{{ autostart_file }}" "{{ autostart_file }}.{{ ansible_date_time.epoch }}"
   become: True
   become_user: "{{ config_owner }}"
   when: stat_result.stat.exists is defined and stat_result.stat.exists
   changed_when: false
 
 - name: Use autostart file from template
-  template:
+  ansible.builtin.template:
     src: autostart.j2
     dest: "{{ autostart_file }}"
     owner: "{{ config_owner }}"
@@ -29,7 +29,7 @@
     mode: 0700
 
 - name: Copy supplied background image
-  copy:
+  ansible.builtin.copy:
     src: berlin.jpg
     dest: "{{ config_dir }}/berlin.jpg"
     owner: "{{ config_owner }}"
