@@ -7,6 +7,7 @@
     name: "{{ item.name }}"
     state: "{{ item.state }}"
   with_items: "{{ fedora_software_list }}"
+  failed_when: false
 
 - name: Update software cache for pacman
   when: ansible_distribution == 'ArchLinux'
@@ -37,6 +38,7 @@
     name: "{{ item.name }}"
     state: "{{ item.state }}"
   with_items: "{{ ubuntu_software_list }}"
+  failed_when: false
 
 - name: Install software on Debian
   when: ansible_distribution == 'Debian'
@@ -45,6 +47,7 @@
     name: "{{ item.name }}"
     state: "{{ item.state }}"
   with_items: "{{ debian_software_list }}"
+  failed_when: false
 
 - name: Install software on openSUSE
   when: ansible_os_family == 'Suse'
