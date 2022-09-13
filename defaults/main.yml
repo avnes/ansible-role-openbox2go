@@ -25,33 +25,32 @@ terminal_command: lxterminal
 
 tint2_autostart: True
 
-software_list:
+arch_software_list:
   - { name: 'feh', state: 'present' }
   - { name: 'scim', state: 'present' }
   - { name: 'lxterminal', state: 'present' }
   - { name: 'xautolock', state: 'present' }
   - { name: 'openbox', state: 'present' }
   - { name: 'obconf', state: 'present' }
-
-software_xtra_debian_family:
-  - { name: 'network-manager', state: 'present' }
-
-software_xtra_ubuntu_family:
-  - { name: 'network-manager', state: 'present' }
-
-software_xtra_redhat_family:
   - { name: 'network-manager-applet', state: 'present' }
 
-software_xtra_arch_family:
+debian_software_list:
+  - { name: 'feh', state: 'present' }
+  - { name: 'scim', state: 'present' }
+  - { name: 'lxterminal', state: 'present' }
+  - { name: 'xautolock', state: 'present' }
+  - { name: 'openbox', state: 'present' }
+  - { name: 'obconf', state: 'present' }
+  - { name: 'network-manager', state: 'present' }
+
+fedora_software_list:
+  - { name: 'feh', state: 'present' }
+  - { name: 'scim', state: 'present' }
+  - { name: 'lxterminal', state: 'present' }
+  - { name: 'xautolock', state: 'present' }
+  - { name: 'openbox', state: 'present' }
+  - { name: 'obconf', state: 'present' }
   - { name: 'network-manager-applet', state: 'present' }
-
-arch_software_list: "{{ software_list }} + {{ software_xtra_arch_family }}"
-
-debian_software_list: "{{ software_list }} + {{ software_xtra_debian_family }}"
-
-fedora_software_list: "{{ software_list }} + {{ software_xtra_redhat_family }}"
-
-ubuntu_software_list: "{{ software_list }} + {{ software_xtra_ubuntu_family }}"
 
 opensuse_software_list:
   - { name: 'feh', state: 'present' }
@@ -60,3 +59,5 @@ opensuse_software_list:
   - { name: 'xautolock', state: 'present' }
   - { name: 'openbox', state: 'present' }
   - { name: 'obconf', state: 'present' }
+
+ubuntu_software_list: "{{ debian_software_list }}"

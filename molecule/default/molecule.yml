@@ -9,7 +9,7 @@ driver:
   name: docker
 platforms:
   - name: ansible-role-openbox2go-fedora
-    image: ghcr.io/avnes/molecule-fedora:35
+    image: ghcr.io/avnes/molecule-fedora:36
     pre_build_image: True
   - name: ansible-role-openbox2go-ubuntu
     image: ghcr.io/avnes/molecule-ubuntu:latest
