@@ -11,19 +11,43 @@ galaxy_info:
   platforms:
   - name: Fedora
     versions:
-    - "all"
+    - 24
+    - 25
+    - 26
+    - 27
+    - 28
+    - 29
+    - 30
+    - 31
+    - 32
+    - 33
+    - 34
+    - 35
+    - 36
   - name: Ubuntu
     versions:
-    - "all"
+    - xenial
+    - yakkety
+    - zesty
+    - artful
+    - bionic
+    - cosmic
+    - disco
+    - eoan
+    - focal
+    - groovy
+    - hirsute
+    - impish
   - name: ArchLinux
     versions:
-    - "all"
+    - all
+    - any
   - name: Debian
     versions:
-    - "all"
+    - sid
   - name: opensuse
     versions:
-    - "all"
+    - 15.2
 
   galaxy_tags:
   - wm
