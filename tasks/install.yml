@@ -1,5 +1,4 @@
 ---
-
 - name: Install software on Fedora
   when: ansible_distribution == 'Fedora'
   become: True
@@ -12,14 +11,14 @@
 - name: Update software cache for pacman
   when: ansible_distribution == 'ArchLinux'
   become: True
-  ansible.builtin.pacman:
+  community.general.pacman:
     update_cache: yes
   changed_when: false
 
 - name: Install software on ArchLinux
   when: ansible_distribution == 'ArchLinux'
   become: True
-  ansible.builtin.pacman:
+  community.general.pacman:
     name: "{{ item.name }}"
     state: "{{ item.state }}"
   with_items: "{{ arch_software_list }}"
@@ -52,7 +51,7 @@
 - name: Install software on openSUSE
   when: ansible_os_family == 'Suse'
   become: true
-  ansible.builtin.zypper:
+  community.general.zypper:
     name: "{{ item.name }}"
     state: "{{ item.state }}"
   with_items: "{{ opensuse_software_list }}"

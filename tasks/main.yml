@@ -1,5 +1,6 @@
 ---
+- name: Installation
+  ansible.builtin._include: install.yml
 
-- include: install.yml
-
-- include: config.yml
+- name: Configuration
+  ansible.builtin._include: config.yml
