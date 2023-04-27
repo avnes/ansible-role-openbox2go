@@ -29,6 +29,6 @@ galaxy_info:
     - gui
 
 dependencies:
-  - avnes.conky
-  - avnes.plank
-  - avnes.tint2
+  - role: avnes.conky
+  - role: avnes.plank
+  - role: avnes.tint2
